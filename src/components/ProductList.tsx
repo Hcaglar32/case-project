@@ -9,7 +9,7 @@ const ProductList: React.FC = () => {
   const loaderRef = useRef<HTMLDivElement | null>(null);
   const navigate = useNavigate();
 
-  
+
   // Lazy load için IntersectionObserver kullanımı
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -34,8 +34,8 @@ const ProductList: React.FC = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div className="w-full h-full mt-20 sm:mt-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center items-center">
+    <div className="w-full h-full  sm:mt-4">
+      <div className="grid grid-cols-1 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center items-center">
         {visibleProducts.length > 0 ? (
           // Ürünleri listele
           visibleProducts.map((product) => (

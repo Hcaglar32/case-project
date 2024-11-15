@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Navbar from './components/Navbar';
 import { ProductProvider } from './contexts/ProductContext';
 import LoadingSpinner from './components/LoadingSpinner';
+import MaxWidthWrapper from './components/maxWidthWrapper';
 
 // Dinamik yükleme için React.lazy kullanımı
 const ProductList = React.lazy(() => import('./components/ProductList'));
@@ -26,6 +27,7 @@ const App: React.FC = () => {
       <Router>
         <ScrollToTop /> {/* Scroll sıfırlama bileşenini Router'ın içinde kullanıyoruz */}
         <Suspense fallback={<LoadingSpinner />}>
+          <MaxWidthWrapper>
           <Routes>
             {/* Navbar sadece ürün listeleme sayfasında görünsün */}
             <Route
@@ -41,6 +43,8 @@ const App: React.FC = () => {
             {/* Ürün detay sayfası */}
             <Route path="/product/:id" element={<ProductDetail />} />
           </Routes>
+          </MaxWidthWrapper>
+      
         </Suspense>
       </Router>
     </ProductProvider>

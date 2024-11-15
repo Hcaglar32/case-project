@@ -23,7 +23,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <div
       onClick={onClick} // Ürün kartına tıklanınca onClick işlevini çağır
-      className="relative group rounded-lg overflow-hidden w-[200px] p-3 cursor-pointer"
+      className="relative group rounded-lg overflow-hidden w-full p-3 cursor-pointer"
     >
       <ProductImage imageUrl={imageUrl} name={title} />
       <ProductInfo
@@ -31,7 +31,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         shippingInfo={shippingInformation}
         price={price}
       />
-      <ProductButton label="Sepete ekle" />
     </div>
   );
 };

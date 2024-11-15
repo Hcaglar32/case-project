@@ -15,12 +15,11 @@ const ProductDetail: React.FC = () => {
   const [open, setOpen] = React.useState(false);
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
-  
   useEffect(() => {
-    window.scrollTo(0, 0); // Sayfa kaydırmasını sıfırlama
-    document.body.classList.add('animate-fadeIn'); // Fade-in animasyonu
+    window.scrollTo(0, 0); // Reset scroll position
+    document.body.classList.add('animate-fadeIn'); // Fade-in animation
     return () => {
-      document.body.classList.remove('animate-fadeIn'); // Sayfa kapanırken animasyonu kaldırma
+      document.body.classList.remove('animate-fadeIn'); // Remove animation on unmount
     };
   }, []);
 
@@ -34,7 +33,7 @@ const ProductDetail: React.FC = () => {
 
   return (
     <>
-      {/* Helmet kullanarak dinamik meta yapısı kullanıyoruz. */}
+      {/* Helmet for dynamic meta tags */}
       <Helmet>
         <title>{product.title} - {product.category} | Bulut Sistem Online Mağaza</title>
         <meta name="description" content={`${product.title} - ${product.category}. ${product.description.slice(0, 160)}... Satın almak için hemen tıklayın.`} />
@@ -45,8 +44,8 @@ const ProductDetail: React.FC = () => {
         <meta property="og:price:amount" content={product.price} />
       </Helmet>
 
-      <div className="max-w-screen-lg my-10 mx-auto p-4">
-        <nav className="flex items-center space-x-4 text-sm text-gray-600">
+      <div className="max-w-screen-lg my-7 mx-auto p-4">
+        <nav className="flex items-center space-x-4 pb-5 lg:pb-0 text-sm text-gray-600">
           <Button variant={"ghost"} onClick={() => navigate('/')} className="hover:text-orange-500 transition-colors" aria-label="Ana sayfaya dön">
             Ana Sayfa
           </Button>
@@ -56,8 +55,8 @@ const ProductDetail: React.FC = () => {
           <span className="font-semibold text-gray-800">{product.title}</span>
         </nav>
 
-        <div className="flex items-center justify-between mb-6">
-          <h1 className="text-3xl sm:text-4xl font-semibold text-gray-800">{product.title}</h1>
+        <div className="flex items-center justify-between mb-4">
+          <h1 className="lg:text-3xl text-xl sm:text-4xl font-semibold text-gray-800">{product.title}</h1>
           <Button
             onClick={() => navigate('/')}
             className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 rounded-lg p-2"
@@ -68,8 +67,8 @@ const ProductDetail: React.FC = () => {
           </Button>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center mb-6 space-y-6 md:space-y-0 md:space-x-6">
-          {/* Ana Resim */}
+        <div className="flex flex-col md:flex-row items-center mb-4 space-y-4 md:space-y-0 md:space-x-6">
+          {/* Main Image */}
           <div className="w-full md:w-1/2 mb-4 md:mb-0">
             <img
               src={product.images[currentIndex]}
@@ -81,9 +80,9 @@ const ProductDetail: React.FC = () => {
             />
           </div>
 
-          {/* Ürün Bilgisi */}
+          {/* Product Information */}
           <div className="w-full md:w-1/2">
-            <p className="text-3xl font-bold text-orange-500 mb-2">{product.price}</p>
+            <p className="text-3xl font-bold text-orange-500 mb-2">{product.price} ₺</p>
             <p className="text-sm text-gray-500">{product.shippingInformation}</p>
             <p className="text-gray-700 font-medium mt-2">
               Stok: {product.stock > 0 ? `${product.stock} ürün` : 'Stokta yok'}
@@ -98,10 +97,17 @@ const ProductDetail: React.FC = () => {
             <p className="text-gray-700 mb-4">{product.description}</p>
             <p className="text-gray-500 mt-2">Garanti: {product.warrantyInformation}</p>
             <p className="text-gray-500">İade Politikası: {product.returnPolicy}</p>
+
+            {/* Add to Cart Button */}
+            <div className="mt-6">
+              <Button className="w-full bg-orange-500 text-white hover:bg-orange-400 rounded-lg py-2">
+                Sepete Ekle
+              </Button>
+            </div>
           </div>
         </div>
 
-        {/* Ufak Resimler */}
+        {/* Small Images */}
         <div className="w-full overflow-x-auto flex space-x-4 py-4 mb-6" aria-live="polite">
           {product.images.map((image, index) => (
             <div key={index} className="w-20 h-20 md:w-24 md:h-24">
@@ -126,7 +132,7 @@ const ProductDetail: React.FC = () => {
           aria-labelledby="product-image-gallery"
         />
 
-        {/* Müşteri Yorumları */}
+        {/* Customer Reviews */}
         <div className="mt-8">
           <h2 className="text-xl font-semibold mb-4">Müşteri Yorumları</h2>
           <div className="space-y-6">
