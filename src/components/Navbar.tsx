@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useProductContext } from '../contexts/ProductContext';
 import { DebounceInput } from 'react-debounce-input';
 import SortComponent from './SortComponent';
 import FilterComponent from './FilterComponent';
-import { Button } from './ui/button';
 import { Icons } from './Icons';
 
 const Navbar = () => {

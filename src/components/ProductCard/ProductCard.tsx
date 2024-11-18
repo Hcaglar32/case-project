@@ -1,7 +1,6 @@
 import React from 'react';
 import { ProductImage } from './ProductImage';
 import { ProductInfo } from './ProductInfo';
-import { ProductButton } from './ProductButton';
 
 
 // Ürün kartında yer alan bilgiler
