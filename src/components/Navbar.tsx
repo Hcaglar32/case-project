@@ -49,6 +49,9 @@ const Navbar = () => {
           <div className="flex flex-wrap justify-center mb-2 lg:flex-nowrap items-center gap-2 my-2 lg:mt-0">
             <SortComponent onSortChange={handleSortChange} />
             <FilterComponent categories={categories} onFilterChange={handleFilterChange} />
+            {selectedCategories.length > 0 && (
+              <p>Seçilen Kategoriler: {selectedCategories.join(", ")}</p>
+            )}
           </div>
 
 

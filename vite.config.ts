@@ -5,11 +5,11 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/case-project/",
+  base: "/case-project/", // Proje adı burada ayarlandı
 
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(__dirname, "./src"), // Alias kullanımı
     },
   },
 });
