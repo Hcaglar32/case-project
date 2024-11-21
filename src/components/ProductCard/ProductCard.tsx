@@ -2,13 +2,12 @@ import React from 'react';
 import { ProductImage } from './ProductImage';
 import { ProductInfo } from './ProductInfo';
 
-
 // Ürün kartında yer alan bilgiler
 interface ProductCardProps {
   title: string;
   price: string;
   shippingInformation: string;
-  imageUrl: string;
+  imageUrl: string;  // Thumbnail props'u kullanıyoruz
   onClick: () => void;
 }
 

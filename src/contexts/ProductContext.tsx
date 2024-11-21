@@ -9,6 +9,7 @@ interface Product {
   shippingInformation: string;
   images: string[];
   category: string;
+  thumbnail: string;
   rating: number;
   description: string;
   stock: number;

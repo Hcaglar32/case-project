@@ -44,7 +44,7 @@ const ProductList: React.FC = () => {
               title={product.title}
               price={product.price}
               shippingInformation={product.shippingInformation}
-              imageUrl={product.images[0]}
+              imageUrl={product.thumbnail} // Thumbnail burada kullanılıyor
               onClick={() => navigate(`/product/${product.id}`)} // Ürün sayfasına yönlendir
             />
           ))
