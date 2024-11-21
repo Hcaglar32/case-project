@@ -1,4 +1,4 @@
-# Bulut Sistem React Case
+# React Case
 
 Bu proje, **React**, **TypeScript** ve **Vite** kullanılarak geliştirilmiş bir frontend uygulamasıdır. **Laravel API**'si ile bağlanarak dinamik olarak veri çekilir ve kullanıcıya ürün bilgileri gösterilir. Uygulama, hızlı geliştirme için HMR (Hot Module Replacement) desteği, ESLint yapılandırmaları ve modern kütüphanelerle oluşturulmuştur.
 
@@ -23,8 +23,8 @@ Follow the steps below to get started:
 1. Depoyu klonlayın ve proje dizinine girin:  
    Clone the repository and navigate to the project directory:
     ```bash
-    git clone https://github.com/kendi-username/bulut-sistem-react-case.git
-    cd bulut-sistem-react-case
+    git clone https://github.com/kendi-username/case-project.git
+    cd case-project
     ```
 
 2. Gerekli bağımlılıkları yükleyin:  
