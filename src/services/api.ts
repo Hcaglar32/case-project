@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const fetchAllProducts = async () => {
   try {
-    const response = await axios.get('https://raw.githubusercontent.com/hcaglar32/case-laravel/main/storage/app/data.json');
+    const response = await axios.get('https://hcaglar32.github.io/case-laravel/public/data.json');
     return response.data.data.products;
   } catch (error) {
     console.error("Error fetching products:", error);
